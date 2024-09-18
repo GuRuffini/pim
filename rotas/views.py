@@ -7,12 +7,12 @@ class AmbienteViewSet(viewsets.ModelViewSet):
     queryset = Ambiente.objects.all()
     serializer_class = AmbienteSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    filterset_fields = ['ambiente', 'bloco', 'andar', 'ativo']
+    filterset_fields = ['ativo',]
     search_fields = ['ambiente', 'bloco', 'andar']
 
 class RotaViewSet(viewsets.ModelViewSet):
     queryset = Rota.objects.all()
     serializer_class = RotaSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    filterset_fields = ['origem__ambiente', 'destino__ambiente', 'ativo']
+    filterset_fields = ['ativo',]
     search_fields = ['origem__ambiente', 'destino__ambiente', 'descricao']
